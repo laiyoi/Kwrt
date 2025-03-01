@@ -10,6 +10,17 @@ name: Build OpenWrt
 
 on: 
   repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Target'
+        required: true
+        type: choice
+        options:
+          - x86_64
+          - x86_generic
+          - armsr_armv8
+
 
 env:
   REPO_TOKEN: ${{ secrets.TOKEN_KIDDIN9 }}
