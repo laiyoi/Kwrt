@@ -308,7 +308,7 @@ jobs:
       continue-on-error: true
       run: |
         shopt -s extglob
-        ls openwrt/bin/targets/
+        tree openwrt/bin/targets/
         cd openwrt/bin/targets/*/*/
         cp $GITHUB_WORKSPACE/openwrt/.config ${{matrix.target}}.config || true
         cp $GITHUB_WORKSPACE/openwrt/build_dir/target-*/linux-*/linux-*/.config ${{matrix.target}}_kernel.config || true
